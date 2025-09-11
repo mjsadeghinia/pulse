@@ -32,6 +32,7 @@ def map_vector_field(f0, new_mesh, u=None, name="fiber", normalize=True):
     dolfin.parameters["form_compiler"]["quadrature_degree"] = 4
 
     ufl_elem = f0.function_space().ufl_element()
+    ufl_elem._quad_scheme = "default"
     f0_new = Function(dolfin.FunctionSpace(new_mesh, ufl_elem))
 
     if u is not None:

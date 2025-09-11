@@ -134,6 +134,14 @@ def cardiac_boundary_conditions(
                 marker=geometry.markers["BASE"][0],
             ),
         ]
+    elif base_bc == "fix_z":
+        dirichlet_bc = [
+            partial(
+                dirichlet_fix_base_directional,
+                ffun=geometry.ffun,
+                marker=geometry.markers["BASE"][0],
+            ),
+        ]
     else:
         raise ValueError(f"Unknown base bc {base_bc}")
 

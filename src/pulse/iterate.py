@@ -363,6 +363,13 @@ class Iterator(object):
 
     def __exit__(self, exc_type, exc_value, exc_traceback):
         pass
+        # del self.problem
+        # del self.control
+        # del self.target
+        # del self.control_values
+        # del self.prev_states    
+        # import gc
+        # gc.collect()
 
     @staticmethod
     def default_parameters():
